@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">macompo</string>
+    <string name="title_activity_main">macompo</string>
+    <string name="package_name">com.jonathanbous.macompo</string>
+    <string name="custom_url_scheme">com.jonathanbous.macompo</string>
+</resources>

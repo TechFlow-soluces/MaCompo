@@ -1,0 +1,69 @@
+// Simplified Prisma schema - No SMS, just text generation
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Simple user - just a username
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+
+  tactics Tactic[]
+
+  @@map("users")
+}
+
+// Tactic model
+model Tactic {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  userId      String   @map("user_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  formations Formation[]
+
+  @@index([userId])
+  @@map("tactics")
+}
+
+// Formation model
+model Formation {
+  id        String   @id @default(uuid())
+  name      String
+  tacticId  String   @map("tactic_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  tactic  Tactic   @relation(fields: [tacticId], references: [id], onDelete: Cascade)
+  players Player[]
+
+  @@index([tacticId])
+  @@map("formations")
+}
+
+// Player model (position on the field)
+model Player {
+  id          String @id @default(uuid())
+  numero      Int
+  nom         String
+  prenom      String?
+  couleur     String
+  positionX   Float  @map("position_x")
+  positionY   Float  @map("position_y")
+  formationId String @map("formation_id")
+
+  formation Formation @relation(fields: [formationId], references: [id], onDelete: Cascade)
+
+  @@index([formationId])
+  @@map("players")
+}

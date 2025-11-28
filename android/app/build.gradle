@@ -16,8 +16,21 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+
+    signingConfigs {
+        release {
+            if (project.hasProperty('MACOMPO_RELEASE_STORE_FILE')) {
+                storeFile file(MACOMPO_RELEASE_STORE_FILE)
+                storePassword MACOMPO_RELEASE_STORE_PASSWORD
+                keyAlias MACOMPO_RELEASE_KEY_ALIAS
+                keyPassword MACOMPO_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

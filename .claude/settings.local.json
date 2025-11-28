@@ -5,7 +5,20 @@
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
       "Bash(npx cap:*)",
-      "Bash(keytool:*)"
+      "Bash(keytool:*)",
+      "Bash(adb devices:*)",
+      "Bash(npx capacitor-assets:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAjout de la documentation de publication et Privacy Policy\n\n- Documentation complète pour Google Play et App Store\n- Privacy Policy HTML pour GitHub Pages\n- Guide ASO et stratégie de mots-clés\n- Checklist de publication\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(where:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(git reset:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nConfiguration pour la publication sur Google Play\n\n- Ajout de la configuration de signature dans build.gradle\n- Template gradle.properties pour les credentials\n- Protection du keystore dans .gitignore\n- Guide de publication complet (PUBLICATION-GUIDE.md)\n- Guide rapide (QUICK-START.md)\n- Infos à copier-coller dans Play Console\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(if exist store-assets dir /B /A-D store-assets)",
+      "Bash(if exist docs dir /B /A-D docs)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []

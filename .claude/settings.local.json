@@ -4,7 +4,8 @@
       "Bash(mkdir:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(npx cap:*)"
+      "Bash(npx cap:*)",
+      "Bash(keytool:*)"
     ],
     "deny": [],
     "ask": []

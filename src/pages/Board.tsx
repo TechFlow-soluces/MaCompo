@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Terrain from '../components/Terrain';
 import ConvocationGenerator from '../components/ConvocationGenerator';
+import AdBanner from '../components/AdBanner';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPlayer, clearPlayers, updatePlayerDetails, removePlayer } from '../store/playersSlice';
@@ -152,16 +153,18 @@ const Board: React.FC = () => {
     };
 
     return (
-        <div style={{
-            width: '100vw',
-            height: '100vh',
-            position: 'relative',
-            overflow: 'hidden',
-            background: 'var(--color-bg)',
-            display: 'flex',
-            flexDirection: 'column'
-        }}>
-            {/* Header Compact */}
+        <>
+            <AdBanner />
+            <div style={{
+                width: '100vw',
+                height: '100vh',
+                position: 'relative',
+                overflow: 'hidden',
+                background: 'var(--color-bg)',
+                display: 'flex',
+                flexDirection: 'column'
+            }}>
+                {/* Header Compact */}
             <div style={{
                 position: 'absolute',
                 top: 0,
@@ -486,7 +489,8 @@ const Board: React.FC = () => {
                 />
             )}
 
-        </div>
+            </div>
+        </>
     );
 };
 

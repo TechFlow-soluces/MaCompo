@@ -14,19 +14,18 @@ const AdBanner = () => {
             try {
                 // Initialiser AdMob
                 await AdMob.initialize({
-                    testingDevices: [], // Ajouter des device IDs ici pour le test
-                    initializeForTesting: true, // Mode test
+                    initializeForTesting: false, // Mode production
                 });
 
                 console.log('AdMob initialisé');
 
                 // Afficher la bannière
                 const options: BannerAdOptions = {
-                    adId: 'ca-app-pub-3940256099942544/6300978111', // ID de test Google
+                    adId: 'ca-app-pub-9961990490474950/8991020427', // ID de bannière production
                     adSize: BannerAdSize.BANNER,
                     position: BannerAdPosition.BOTTOM_CENTER,
                     margin: 0,
-                    isTesting: true, // Mode test
+                    isTesting: false, // Mode production
                 };
 
                 await AdMob.showBanner(options);

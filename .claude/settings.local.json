@@ -18,7 +18,18 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nConfiguration pour la publication sur Google Play\n\n- Ajout de la configuration de signature dans build.gradle\n- Template gradle.properties pour les credentials\n- Protection du keystore dans .gitignore\n- Guide de publication complet (PUBLICATION-GUIDE.md)\n- Guide rapide (QUICK-START.md)\n- Infos à copier-coller dans Play Console\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(if exist store-assets dir /B /A-D store-assets)",
       "Bash(if exist docs dir /B /A-D docs)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(.gradlew:*)",
+      "Bash(adb pair:*)",
+      "Bash(adb connect:*)",
+      "Bash(gradlew installDebug:*)",
+      "Bash(./gradlew installDebug:*)",
+      "Bash(nul)",
+      "Bash(adb disconnect:*)",
+      "Bash(adb logcat:*)",
+      "Bash(timeout 10 adb logcat:*)",
+      "Bash(adb:*)",
+      "Bash(./gradlew bundleRelease:*)"
     ],
     "deny": [],
     "ask": []
